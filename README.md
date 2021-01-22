@@ -21,7 +21,7 @@ The internal architecture of OpenXLSX has been significantly re-designed since t
 Due to the re-design of the architecture, there are a few changes to the public interface. These changes, however, are not significant, and it should be easy to update:
 
 * All internal objects are now handled as values rather than pointers, similar to the approach taken in the underlying PugiXML library. This means that when requesting a certain worksheet from a workbook, the resulting worksheet is not returned as a pointer, but as an object that supports both copying and moving.
-* The distingction between interface objects and implementation objects are now gone, as it made it very difficult to manage changes. It was an attempt to implement the pimpl idiom, but it wasn't very effective. In the future, I may try to implement pimpl again, but only if it can be done in a simpler way.
+* The distinction between interface objects and implementation objects is now gone, as it made it very difficult to manage changes. It was an attempt to implement the pimpl idiom, but it wasn't very effective. In the future, I may try to implement pimpl again, but only if it can be done in a simpler way.
 * All member functions have been renamed to begin wtih a small letter (camelCase), i.e. the member function WorksheetCount() is renamed to worksheetCount(). This was done mostly for cosmetic reasons.
 
 I realise that these changes may cause problems for some users. Because of that, the previous version of OpenXLSX can be found in the "legacy" branch of this repository. However, I strongly recommend that you transition to the new version instead.
